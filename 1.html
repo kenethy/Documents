@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#disini").text("Hello");
+            $("#masuk").on("click", function() {
+              var a= $("#isi").val();
+              $("#disini").html(a); //bedakan dengan .text()
+        });
+        $("p").on("click",function(){
+            $(this).hide();
+        })
+        $("#showme").on("click",function(){
+            $("#biru").show();
+        });
+        $(".del").on("click", function(){
+            $(this).parent().parent().remove();
+        });
+        $("#sub").on("click", function(e){
+            e.preventDefault();
+            alert($("#nn").val());
+        });
+    });
+    </script>
+</head>
+<body>
+    <p id="disini"></p>
+    <p><input type="text" id="isi"></p>
+    <button id="masuk">Masuk</button>
+    <p style="border: 2px solid black; height: 20px"></p>
+    <p style="border: 2px solid red; height: 20px;"></p>
+    <p id="biru" style="border: 2px solid blue; height: 20px;"></p>
+    <p style="border: 2px solid yellow; height: 20px;"></p>
+    <p style="border: 2px solid green; height: 20px;"></p>
+    <button id="showme">Show it back</button>
+
+    <table border=1>
+    <tr><th>No</th><th>Name</th><th>Email</th><th>Action</th></tr>
+    <tr><td>1</td><td>Aaa</td><td>aaa@petra.ac.id</td><td><button class="del">DEL</button></td></tr>
+    <tr><td>2</td><td>Bbb</td><td>bbb@petra.ac.id</td><td><button class="del">DEL</button></td></tr>
+    <tr><td>3</td><td>Ccc</td><td>ccc@petra.ac.id</td><td><button class="del">DEL</button></td></tr>
+    <tr><td>4</td><td>Ddd</td><td>ddd@petra.ac.id</td><td><button class="del">DEL</button></td></tr>
+    <tr><td>5</td><td>Eee</td><td>eee@petra.ac.id</td><td><button class="del">DEL</button></td></tr>
+    </table>
+    <form action="test.php"method="get">
+        <input type="text"id="nn"><br>
+        <!--<input type="submit">!-->
+        <button id="sub">Submit</button>
+
+    </form>
+    
+
+</body>
+</html>
